@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-4-12 9:35:19 by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.ystech.mem.model.Reward" table="mem_Reward">
+        <id name="dbid" type="java.lang.Integer">
+            <column name="dbid" />
+            <generator class="identity" />
+        </id>
+        <property name="rewardFrom" type="string">
+            <column name="rewardFrom" length="2000" />
+        </property>
+        <property name="rewardMoney" type="java.lang.Float">
+            <column name="rewardMoney" precision="12" scale="0">
+                <comment>&#183;&#181;&#192;&#251;&#189;&#240;&#182;&#238;</comment>
+            </column>
+        </property>
+        <property name="rewardType" type="java.lang.Integer">
+            <column name="rewardType">
+            </column>
+        </property>
+        <property name="note" type="string">
+            <column name="note" length="2000" />
+        </property>
+        <property name="createTime" type="timestamp">
+            <column name="createTime" length="19" />
+        </property>
+        <many-to-one name="member" class="com.ystech.mem.model.Member" column="memberId" not-found="ignore" fetch="select"></many-to-one>
+        <property name="creator" type="string">
+            <column name="creator" />
+        </property>
+        <property name="recommendCustomerId" type="java.lang.Integer">
+            <column name="recommendCustomerId">
+                <comment>&#182;&#169;&#181;&#165;ID</comment>
+            </column>
+        </property>
+        <property name="enterpriseId" type="java.lang.Integer">
+            <column name="enterpriseId">
+            </column>
+        </property>
+        <property name="turnBackStatus" type="java.lang.Integer">
+            <column name="turnBackStatus">
+            </column>
+        </property>
+        <property name="rewardWay" type="java.lang.Integer">
+            <column name="rewardWay">
+            </column>
+        </property>
+          <property name="sendTime" type="timestamp">
+            <column name="sendTime" length="19" />
+        </property>
+    </class>
+</hibernate-mapping>

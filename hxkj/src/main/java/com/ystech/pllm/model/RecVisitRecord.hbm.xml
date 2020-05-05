@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-8-19 22:40:49 by Hibernate Tools 4.0.0.Final -->
+<hibernate-mapping>
+    <class name="com.ystech.pllm.model.RecVisitRecord" table="pllm_rec_visitrecord" >
+        <id name="dbid" type="java.lang.Integer">
+            <column name="dbid" />
+            <generator class="identity" />
+        </id>
+        <property name="gzUserId" type="java.lang.Integer">
+            <column name="gzUserId" />
+        </property>
+        <property name="startTime" type="timestamp">
+            <column name="startTime" length="19" />
+        </property>
+        <property name="leaveTime" type="timestamp">
+            <column name="leaveTime" length="19" />
+        </property>
+        <property name="timeLong" type="java.lang.Integer">
+            <column name="timeLong" />
+        </property>
+        <property name="ip" type="string">
+            <column name="ip" length="500" />
+        </property>
+        <property name="sessionId" type="string">
+            <column name="sessionId" length="500" />
+        </property>
+        <property name="areaStr" type="string">
+            <column name="areaStr" length="500" />
+        </property>
+        <property name="city" type="string">
+            <column name="city" length="500" />
+        </property>
+        <property name="provice" type="string">
+            <column name="provice" length="500" />
+        </property>
+    </class>
+</hibernate-mapping>

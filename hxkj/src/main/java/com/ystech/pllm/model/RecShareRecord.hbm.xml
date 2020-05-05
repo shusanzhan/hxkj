@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2014-4-30 12:02:25 by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.ystech.pllm.model.RecShareRecord" table="pllm_rec_sharerecord" >
+        <id name="dbid" type="java.lang.Integer">
+            <column name="dbid" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="member" class="com.ystech.mem.model.Member" fetch="select" not-found="ignore">
+            <column name="memberId" />
+        </many-to-one>
+        <property name="wechatId" type="string">
+            <column name="wechatId" length="50" />
+        </property>
+        <property name="project" type="string">
+            <column name="project" length="500" />
+        </property>
+        <property name="note" type="string">
+            <column name="note" length="500" />
+        </property>
+        <property name="shareTime" type="timestamp">
+            <column name="shareTime" length="19" />
+        </property>
+        <property name="type" type="java.lang.Integer">
+            <column name="type" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2014-2-26 15:10:13 by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.ystech.mem.model.PointRecord" table="mem_pointrecord">
+        <id name="dbid" type="java.lang.Integer">
+            <column name="dbid" />
+            <generator class="identity" />
+        </id>
+        <property name="pointFrom" type="string">
+            <column name="pointFrom" length="200" />
+        </property>
+        <property name="num" type="java.lang.Integer">
+            <column name="num" />
+        </property>
+        <property name="note" type="string">
+            <column name="note" length="500" />
+        </property>
+        <property name="createTime" type="timestamp">
+            <column name="createTime" length="19" />
+        </property>
+        <property name="enterpriseId" type="java.lang.Integer">
+            <column name="enterpriseId" />
+        </property>
+        <property name="recommendCustomerId" type="java.lang.Integer">
+            <column name="recommendCustomerId" />
+        </property>
+        <many-to-one name="member" class="com.ystech.mem.model.Member" column="memberId" not-found="ignore" ></many-to-one>
+        <property name="creator" type="string">
+            <column name="creator" length="200" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-1-18 21:01:52 by Hibernate Tools 4.0.0.Final -->
+<hibernate-mapping>
+    <class name="com.ystech.weixin.model.WeixinMenuentityGroup" table="weixin_menuentitygroup" >
+        <id name="dbid" type="java.lang.Integer">
+            <column name="dbid" />
+            <generator class="identity" />
+        </id>
+        <property name="name" type="string">
+            <column name="name" />
+        </property>
+        <property name="type" type="java.lang.Integer">
+            <column name="type" />
+        </property>
+        <property name="enterpriseId" type="java.lang.Integer">
+            <column name="enterpriseId" />
+        </property>
+        <property name="note" type="string">
+            <column name="note" />
+        </property>
+        <property name="menuid" type="string">
+            <column name="menuid" />
+        </property>
+        <property name="createDate" type="timestamp">
+            <column name="createDate" length="19" />
+        </property>
+        <property name="modifyDate" type="timestamp">
+            <column name="modifyDate" length="19" />
+        </property>
+        <one-to-one name="weixinMenuentityGroupMatchRule" property-ref="weixinMenuentityGroup"></one-to-one>
+    </class>
+</hibernate-mapping>

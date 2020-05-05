@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-10-3 16:53:04 by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.ystech.xwqr.model.sys.SystemInfo" table="sys_systeminfo">
+        <id name="dbid" type="java.lang.Integer">
+            <column name="dbid" />
+            <generator class="identity" />
+        </id>
+        <property name="name" type="string">
+            <column name="name" length="200" />
+        </property>
+        <property name="nameImage" type="string">
+            <column name="nameImage" length="200" />
+        </property>
+        <property name="loginLogo" type="string">
+            <column name="loginLogo" length="200" />
+        </property>
+        <property name="infoLogo" type="string">
+            <column name="infoLogo" length="200" />
+        </property>
+         <property name="wxUserStatus" type="java.lang.Integer">
+            <column name="wxUserStatus" />
+        </property>
+         <property name="grofitAprovalStatus" type="java.lang.Integer">
+            <column name="grofitAprovalStatus" />
+        </property>
+         <property name="custValidateStatus" type="java.lang.Integer">
+            <column name="custValidateStatus" />
+        </property>
+         <property name="dccInvationAndRecpStatus" type="java.lang.Integer">
+            <column name="dccInvationAndRecpStatus" />
+        </property>
+         <property name="wechatType" type="java.lang.Integer">
+            <column name="wechatType" />
+        </property>
+    </class>
+</hibernate-mapping>

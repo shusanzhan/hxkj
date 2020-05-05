@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-8-1 8:21:28 by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.ystech.mem.model.MemPointrecordSet" table="mem_pointrecordset">
+        <id name="dbid" type="java.lang.Integer">
+            <column name="dbid" />
+            <generator class="identity" />
+        </id>
+        <property name="enterpriseId" type="java.lang.Integer">
+            <column name="enterpriseId" />
+        </property>
+        <property name="rigPointStatus" type="java.lang.Integer">
+            <column name="rigPointStatus" />
+        </property>
+        <property name="rigPointNum" type="java.lang.Integer">
+            <column name="rigPointNum" />
+        </property>
+        <property name="rigParentStatus" type="java.lang.Integer">
+            <column name="rigParentStatus" />
+        </property>
+        <property name="rigParentNum" type="java.lang.Integer">
+            <column name="rigParentNum" />
+        </property>
+        <property name="agentSuccessStatus" type="java.lang.Integer">
+            <column name="agentSuccessStatus" />
+        </property>
+        <property name="agentSuccessNum" type="java.lang.Integer">
+            <column name="agentSuccessNum" />
+        </property>
+        <property name="agentParentSuccessNum" type="java.lang.Integer">
+            <column name="agentParentSuccessNum" />
+        </property>
+        <property name="agentParentSuccessStatus" type="java.lang.Integer">
+            <column name="agentParentSuccessStatus" />
+        </property>
+        <property name="customerSuccessStatus" type="java.lang.Integer">
+            <column name="customerSuccessStatus" />
+        </property>
+        <property name="customerSuccessNum" type="java.lang.Integer">
+            <column name="customerSuccessNum" />
+        </property>
+          <property name="createTime" type="timestamp" length="19">
+            <column name="createTime" />
+        </property>
+        <property name="modifyTime" type="timestamp" length="19">
+            <column name="modifyTime" />
+        </property>
+    </class>
+</hibernate-mapping>

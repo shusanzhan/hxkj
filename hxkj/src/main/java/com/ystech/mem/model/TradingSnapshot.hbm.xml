@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2014-9-12 13:25:00 by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.ystech.mem.model.TradingSnapshot" table="mem_tradingsnapshot">
+        <id name="dbid" type="java.lang.Integer">
+            <column name="dbid" />
+            <generator class="identity" />
+        </id>
+        <property name="tradingTime" type="timestamp">
+            <column name="tradingTime" length="19" />
+        </property>
+        <property name="money" type="string">
+            <column name="money" length="500" />
+        </property>
+        <property name="memberId" type="java.lang.Integer">
+            <column name="memberId" />
+        </property>
+        <property name="status" type="java.lang.Integer">
+            <column name="status" />
+        </property>
+        <property name="tradingType" type="java.lang.Integer">
+            <column name="tradingType" />
+        </property>
+        <property name="tradingId" type="java.lang.Integer">
+            <column name="tradingId" />
+        </property>
+    </class>
+</hibernate-mapping>

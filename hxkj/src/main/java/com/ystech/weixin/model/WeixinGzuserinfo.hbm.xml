@@ -1,0 +1,101 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-6-11 14:42:54 by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.ystech.weixin.model.WeixinGzuserinfo" table="weixin_gzuserinfo">
+        <id name="dbid" type="java.lang.Integer">
+            <column name="dbid" />
+            <generator class="identity" />
+        </id>
+        <property name="subscribe" type="string">
+            <column name="subscribe" length="100">
+                <comment>&#202;&#199;&#183;&#241;&#185;&#216;&#215;&#162;</comment>
+            </column>
+        </property>
+        <property name="openid" type="string">
+            <column name="openid" length="100">
+                <comment>openId</comment>
+            </column>
+        </property>
+        <property name="nickname" type="string">
+            <column name="nickname" length="200">
+                <comment>&#234;&#199;&#179;&#198;</comment>
+            </column>
+        </property>
+        <property name="sex" type="string">
+            <column name="sex" length="100">
+                <comment>&#208;&#212;&#177;&#240;</comment>
+            </column>
+        </property>
+        <property name="city" type="string">
+            <column name="city" length="100">
+                <comment>&#179;&#199;&#202;&#208;</comment>
+            </column>
+        </property>
+        <property name="province" type="string">
+            <column name="province" length="100">
+                <comment>&#202;&#161;&#183;&#221;</comment>
+            </column>
+        </property>
+        <property name="country" type="string">
+            <column name="country" length="100">
+                <comment>&#185;&#250;&#188;&#210;</comment>
+            </column>
+        </property>
+        <property name="headimgurl" type="string">
+            <column name="headimgurl" length="400">
+                <comment>&#211;&#195;&#187;&#167;&#205;&#183;&#207;&#241;</comment>
+            </column>
+        </property>
+        <property name="bzName" type="string">
+            <column name="bzName" length="100">
+                <comment>&#177;&#184;&#215;&#162;&#195;&#251;&#179;&#198;</comment>
+            </column>
+        </property>
+        <property name="groupId" type="string">
+            <column name="groupId" length="100" />
+        </property>
+        <property name="subscribeTime" type="string">
+            <column name="subscribe_time" length="100">
+                <comment>&#185;&#216;&#215;&#162;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="remark" type="string">
+            <column name="remark" length="100">
+                <comment>&#185;&#216;&#215;&#162;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="unionid" type="string">
+            <column name="unionid" length="100">
+                <comment>&#185;&#216;&#215;&#162;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="language" type="string">
+            <column name="language" length="100">
+            </column>
+        </property>
+        <property name="eventStatus" type="java.lang.Integer">
+            <column name="eventStatus" >
+            </column>
+        </property>
+        <property name="addtime" type="timestamp">
+            <column name="addtime" length="19" />
+        </property>
+        <property name="cancelDate" type="timestamp">
+            <column name="cancelDate" length="19" />
+        </property>
+        <property name="accountid" type="java.lang.Integer">
+            <column name="accountid" />
+        </property>
+        <property name="memType" type="java.lang.Integer">
+            <column name="memType" />
+        </property>
+        <property name="enterpriseId" type="java.lang.Integer">
+            <column name="enterpriseId" />
+        </property>
+        <many-to-one name="parent" class="com.ystech.weixin.model.WeixinGzuserinfo" column="parentId" not-found="ignore" fetch="select"></many-to-one>
+        <many-to-one name="spreadDetail" class="com.ystech.pllm.model.SpreadDetail" column="spreadDetailId" not-found="ignore" fetch="select"></many-to-one>
+		<one-to-one  name="member" property-ref="weixinGzuserinfo"  ></one-to-one>
+    </class>
+</hibernate-mapping>

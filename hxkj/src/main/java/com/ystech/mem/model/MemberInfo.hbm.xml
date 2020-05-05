@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2014-2-26 15:23:05 by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.ystech.mem.model.MemberInfo" table="mem_memberinfo" >
+        <id name="dbid" type="java.lang.Integer">
+            <column name="dbid" />
+            <generator class="identity" />
+        </id>
+        <property name="name" type="string">
+            <column name="name" />
+        </property>
+        <property name="address" type="string">
+            <column name="address" />
+        </property>
+		<many-to-one name="member" class="com.ystech.mem.model.Member" column="memberId" not-found="ignore" cascade="delete"></many-to-one>
+		<many-to-one name="area" class="com.ystech.xwqr.model.sys.Area" column="areaId" not-found="ignore"></many-to-one>
+    </class>
+</hibernate-mapping>

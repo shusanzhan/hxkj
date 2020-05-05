@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-9-11 15:00:31 by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.ystech.weixin.model.WechatMedia" table="weixin_wechatmedia">
+        <id name="dbid" type="java.lang.Integer">
+            <column name="dbid" />
+            <generator class="identity" />
+        </id>
+        <property name="errcode" type="string">
+            <column name="errcode" length="200" />
+        </property>
+        <property name="errmsg" type="string">
+            <column name="errmsg" length="500" />
+        </property>
+        <property name="type" type="string">
+            <column name="type" length="500" />
+        </property>
+        <property name="thumbUrl" type="string">
+            <column name="thumbUrl" length="500" />
+        </property>
+        <property name="thumbWechatUrl" type="string">
+            <column name="thumbWechatUrl" length="500" />
+        </property>
+        <property name="mediaId" type="string">
+            <column name="media_id" length="500" />
+        </property>
+        <property name="name" type="string">
+            <column name="name" length="500" />
+        </property>
+        <property name="uploadDate" type="timestamp">
+            <column name="uploadDate" length="10" />
+        </property>
+         <property name="mediaType" type="java.lang.Integer">
+         	<column name="mediaType"></column>
+         </property>
+         <property name="weixinAccountId" type="java.lang.Integer">
+         	<column name="weixinAccountId"></column>
+         </property>
+    </class>
+</hibernate-mapping>

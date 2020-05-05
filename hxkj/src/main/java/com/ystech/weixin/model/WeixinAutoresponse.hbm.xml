@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-6-7 21:36:04 by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.ystech.weixin.model.WeixinAutoresponse" table="weixin_autoresponse" >
+       <id name="dbid" type="java.lang.Integer">
+            <column name="dbid" />
+            <generator class="identity" />
+        </id>
+        <property name="addtime" type="string">
+            <column name="addtime" />
+        </property>
+        <property name="keyword" type="string">
+            <column name="keyword" />
+        </property>
+        <property name="msgtype" type="string">
+            <column name="msgtype" />
+        </property>
+        <property name="templateId" type="java.lang.Integer">
+            <column name="templateId" />
+        </property>
+        <property name="templatename" type="string">
+            <column name="templatename" />
+        </property>
+        <property name="accountid" type="string">
+            <column name="accountid" length="100" />
+        </property>
+    </class>
+</hibernate-mapping>

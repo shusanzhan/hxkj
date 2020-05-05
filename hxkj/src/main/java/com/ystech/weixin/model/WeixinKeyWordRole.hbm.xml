@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-11-20 21:48:25 by Hibernate Tools 4.0.0.Final -->
+<hibernate-mapping>
+    <class name="com.ystech.weixin.model.WeixinKeyWordRole" table="weixin_keywordrole">
+        <id name="dbid" type="java.lang.Integer">
+            <column name="dbid" />
+            <generator class="identity" />
+        </id>
+        <property name="name" type="string">
+            <column name="name" length="100" />
+        </property>
+        <property name="createDate" type="timestamp">
+            <column name="createDate" length="19" />
+        </property>
+        <property name="modifyDate" type="date">
+            <column name="modifyDate" length="10" />
+        </property>
+        <property name="type" type="java.lang.Integer">
+            <column name="type" />
+        </property>
+        <property name="accountid" type="java.lang.Integer">
+            <column name="accountid" />
+        </property>
+         <many-to-one name="spreadDetail" class="com.ystech.pllm.model.SpreadDetail" column="spreadDetailId"></many-to-one>
+         <set name="weixinKeyWords" table="weixin_keyword" lazy="false" order-by="dbid">
+        	<key column="keywordroleId"></key>
+        	<one-to-many class="com.ystech.weixin.model.WeixinKeyWord" not-found="ignore"/>
+        </set>
+         <set name="weixinKeyAutoresponses" table="weixin_keyautoresponse" lazy="false" order-by="dbid">
+        	<key column="keywordroleId"></key>
+        	<one-to-many class="com.ystech.weixin.model.WeixinKeyAutoresponse" not-found="ignore"/>
+        </set>
+    </class>
+</hibernate-mapping>

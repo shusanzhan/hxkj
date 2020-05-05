@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-6-7 9:29:46 by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.ystech.weixin.model.WeixinMenuentity" table="weixin_menuentity" >
+       <id name="dbid" type="java.lang.Integer">
+            <column name="dbid" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="weixinMenuentity" class="com.ystech.weixin.model.WeixinMenuentity" fetch="select">
+            <column name="fatherid" length="32" />
+        </many-to-one>
+        <property name="menukey" type="string">
+            <column name="menukey" />
+        </property>
+        <property name="msgtype" type="string">
+            <column name="msgtype" />
+        </property>
+        <property name="name" type="string">
+            <column name="name" />
+        </property>
+        <property name="orders" type="string">
+            <column name="orders" length="11" />
+        </property>
+        <property name="templateid" type="string">
+            <column name="templateid" />
+        </property>
+        <property name="type" type="string">
+            <column name="type" />
+        </property>
+        <property name="menuType" type="java.lang.Integer">
+            <column name="menuType" />
+        </property>
+        <property name="enterpriseId" type="java.lang.Integer">
+            <column name="enterpriseId" />
+        </property>
+        <property name="url" type="string">
+            <column name="url" />
+        </property>
+        <property name="accountid" type="string">
+            <column name="accountid" />
+        </property>
+        <set name="weixinMenuentities" table="weixin_menuentity" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="fatherid" length="32" />
+            </key>
+            <one-to-many class="com.ystech.weixin.model.WeixinMenuentity" />
+        </set>
+        <many-to-one name="weixinMenuentityGroup" column="weixinMenuentityGroupId" class="com.ystech.weixin.model.WeixinMenuentityGroup" fetch="select"></many-to-one>
+    </class>
+</hibernate-mapping>

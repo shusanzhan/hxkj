@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-2-29 10:22:00 by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.ystech.mem.model.MemLog" table="mem_memlog" >
+        <id name="dbid" type="java.lang.Integer">
+            <column name="dbid" />
+            <generator class="identity" />
+        </id>
+        <property name="type" type="string">
+            <column name="type" length="500" />
+        </property>
+        <property name="note" type="string">
+            <column name="note" length="2000" />
+        </property>
+        <property name="operator" type="string">
+            <column name="operator" length="500" />
+        </property>
+        <property name="operateDate" type="date">
+            <column name="operateDate" length="10" />
+        </property>
+        <property name="memberId" type="java.lang.Integer">
+            <column name="memberId" />
+        </property>
+    </class>
+</hibernate-mapping>

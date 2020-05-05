@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-6-18 16:17:42 by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.ystech.xwqr.model.sys.Position" table="sys_position" >
+        <id name="dbid" type="java.lang.Integer">
+            <column name="dbid" />
+            <generator class="identity" />
+        </id>
+        <property name="name" type="string">
+            <column name="name" />
+        </property>
+        <property name="discription" type="string">
+            <column name="discription" />
+        </property>
+        <many-to-one name="parent" class="com.ystech.xwqr.model.sys.Position" column="parentId" not-found="ignore"></many-to-one>
+        <property name="suqNo" type="java.lang.Integer">
+            <column name="suqNo" />
+        </property>
+    </class>
+</hibernate-mapping>

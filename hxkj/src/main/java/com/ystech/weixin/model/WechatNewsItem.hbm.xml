@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-9-9 17:17:17 by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.ystech.weixin.model.WechatNewsItem" table="weixin_wechatnewsitem">
+         <id name="dbid" type="java.lang.Integer">
+            <column name="dbid" />
+            <generator class="identity" />
+        </id>
+        <property name="thumb_media_id" type="string">
+            <column name="thumb_media_id" length="500" />
+        </property>
+        <property name="thumbWechatUrl" type="string">
+            <column name="thumbWechatUrl" length="500" />
+        </property>
+        <property name="thumbUrl" type="string">
+            <column name="thumbUrl" length="500" />
+        </property>
+        <property name="title" type="string">
+            <column name="title" length="500" />
+        </property>
+        <property name="author" type="string">
+            <column name="author" length="500" />
+        </property>
+        <property name="content_source_url" type="string">
+            <column name="content_source_url" length="500" />
+        </property>
+        <property name="content" type="string">
+            <column name="content" length="65535" />
+        </property>
+        <property name="digest" type="string">
+            <column name="digest" length="2000" />
+        </property>
+        <property name="show_cover_pic" type="java.lang.Integer">
+            <column name="show_cover_pic" />
+        </property>
+        <many-to-one name="wechatNewsTemplate" column="templateid" class="com.ystech.weixin.model.WechatNewsTemplate" not-found="ignore" fetch="select"></many-to-one>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-9-9 17:17:17 by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.ystech.weixin.model.WechatNewsTemplate" table="weixin_wechatnewstemplate" >
+        <id name="dbid" type="java.lang.Integer">
+            <column name="dbid" />
+            <generator class="identity" />
+        </id>
+        <property name="addtime" type="string">
+            <column name="addtime" length="500" />
+        </property>
+        <property name="title" type="string">
+            <column name="title" length="500" />
+        </property>
+        <property name="type" type="java.lang.Integer">
+            <column name="type" />
+        </property>
+        <property name="accountId" type="java.lang.Integer">
+            <column name="accountId" />
+        </property>
+        <property name="mediaId" type="string">
+            <column name="media_id" length="500" />
+        </property>
+          <set name="wechatNewsitems" table="weixin_wechatnewsitem" inverse="true" lazy="true" fetch="select" order-by="dbid">
+            <key>
+                <column name="templateid" length="32" />
+            </key>
+            <one-to-many class="com.ystech.weixin.model.WechatNewsItem" />
+        </set>
+    </class>
+</hibernate-mapping>

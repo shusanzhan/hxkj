@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-6-7 21:57:03 by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.ystech.weixin.model.WeixinNewsitem" table="weixin_newsitem" >
+       	<id name="dbid" type="java.lang.Integer">
+            <column name="dbid" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="weixinNewstemplate" class="com.ystech.weixin.model.WeixinNewstemplate" fetch="select">
+            <column name="templateid" length="32" />
+        </many-to-one>
+        <property name="newType" type="string">
+            <column name="new_type">
+                <comment>&#205;&#188;&#206;&#196;&#192;&#224;&#208;&#205;&#163;&#186;&#205;&#188;&#206;&#196;&#187;&#185;&#202;&#199;&#205;&#226;&#178;&#191;url</comment>
+            </column>
+        </property>
+        <property name="author" type="string">
+            <column name="author" />
+        </property>
+        <property name="content" type="string">
+            <column name="content" length="65535" />
+        </property>
+        <property name="description" type="string">
+            <column name="description" />
+        </property>
+        <property name="imagepath" type="string">
+            <column name="imagepath" />
+        </property>
+        <property name="orders" type="string">
+            <column name="orders" />
+        </property>
+        <property name="title" type="string">
+            <column name="title" />
+        </property>
+        <property name="coverShow" type="string">
+            <column name="coverShow" />
+        </property>
+        <property name="url" type="string">
+            <column name="url">
+                <comment>&#205;&#226;&#178;&#191;URL</comment>
+            </column>
+        </property>
+        <property name="createDate" type="date">
+            <column name="create_date" length="10" />
+        </property>
+        <property name="accountid" type="string">
+            <column name="accountid" length="100" />
+        </property>
+        <property name="readNum" type="java.lang.Integer">
+            <column name="readNum" length="100" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,84 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2012-11-21 17:13:09 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.ystech.xwqr.model.sys.User" table="sys_user" >
+        <id name="dbid" type="java.lang.Integer">
+            <column name="dbid" />
+            <generator class="identity" />
+        </id>
+        <property name="userId" type="string">
+            <column name="userId" length="50" />
+        </property>
+        <property name="realName" type="string">
+            <column name="realName" length="50" />
+        </property>
+        <property name="password" type="string">
+            <column name="password" length="20" />
+        </property>
+        <property name="email" type="string">
+            <column name="email" length="200" />
+        </property>
+        <property name="wechatId" type="string">
+            <column name="wechatId" length="200" />
+        </property>
+        <property name="mobilePhone" type="string">
+            <column name="mobilePhone" length="20" />
+        </property>
+        <property name="phone" type="string">
+            <column name="phone" length="20" />
+        </property>
+        <property name="qq" type="string">
+            <column name="qq" length="20" />
+        </property>
+        <property name="positionIds" type="string">
+            <column name="positionIds" length="2000" />
+        </property>
+        <property name="positionNames" type="string">
+            <column name="positionNames" length="2000" />
+        </property>
+        <property name="companyName" type="string">
+            <column name="companyName" length="2000" />
+        </property>
+        <property name="compnayIds" type="string">
+            <column name="compnayIds" length="2000" />
+        </property>
+        <property name="userState" type="java.lang.Integer">
+            <column name="userState" length="20" />
+        </property>
+        <property name="approvalCpidStatus" type="java.lang.Integer">
+            <column name="approvalCpidStatus" length="20" />
+        </property>
+        <property name="queryOtherDataStatus" type="java.lang.Integer">
+            <column name="queryOtherDataStatus" length="20" />
+        </property>
+        <property name="adminType" type="java.lang.Integer">
+            <column name="adminType" length="20" />
+        </property>
+        <property name="bussiType" type="java.lang.Integer">
+            <column name="bussiType" length="20" />
+        </property>
+        <property name="attentionStatus" type="java.lang.Integer">
+            <column name="attentionStatus" length="20" />
+        </property>
+        <property name="sysWeixinStatus" type="java.lang.Integer">
+            <column name="sysWeixinStatus" length="20" />
+        </property>
+        <property name="selfApproval" type="java.lang.Integer">
+            <column name="selfApproval" length="20" />
+        </property>
+        <property name="approvalMoney" type="java.lang.Integer">
+            <column name="approvalMoney" length="20" />
+        </property>
+        <many-to-one name="parent" class="com.ystech.xwqr.model.sys.User" fetch="select" not-found="ignore">
+            <column name="parentId" />
+        </many-to-one>
+        <many-to-one name="department" class="com.ystech.xwqr.model.sys.Department" column="departmentId"  not-found="ignore"></many-to-one>
+        <many-to-one name="enterprise" class="com.ystech.xwqr.model.sys.Enterprise" column="enterpriseId"  not-found="ignore"></many-to-one>
+        <set name="roles" table="sys_userRoles" lazy="false">
+			<key column="userId"></key>
+			<many-to-many class="com.ystech.xwqr.model.sys.Role" column="roleId"></many-to-many>            
+        </set>
+    </class>
+</hibernate-mapping>

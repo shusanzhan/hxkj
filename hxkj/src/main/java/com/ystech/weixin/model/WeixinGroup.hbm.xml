@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-8-21 14:22:35 by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.ystech.weixin.model.WeixinGroup" table="weixin_group">
+        <id name="dbid" type="java.lang.Integer">
+            <column name="dbid" />
+            <generator class="identity" />
+        </id>
+        <property name="name" type="string">
+            <column name="name" length="500" />
+        </property>
+        <property name="dis" type="string">
+            <column name="dis" length="200" />
+        </property>
+        <property name="isCommon" type="java.lang.Integer">
+            <column name="isCommon" />
+        </property>
+        <property name="accountId" type="java.lang.Integer">
+            <column name="accountId" />
+        </property>
+        <property name="wechatGroupId" type="string">
+            <column name="wechatGroupId" />
+        </property>
+    </class>
+</hibernate-mapping>

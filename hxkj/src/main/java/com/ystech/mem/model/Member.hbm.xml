@@ -1,0 +1,158 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2014-2-26 10:47:34 by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.ystech.mem.model.Member" table="mem_member">
+        <id name="dbid" type="java.lang.Integer">
+            <column name="dbid" />
+            <generator class="identity" />
+        </id>
+        <property name="no" type="string">
+            <column name="No" length="200" />
+        </property>
+        <property name="name" type="string">
+            <column name="name" length="200" />
+        </property>
+        <property name="mobilePhone" type="string">
+            <column name="mobilePhone" length="20" />
+        </property>
+        <property name="phone" type="string">
+            <column name="phone" length="20" />
+        </property>
+        <many-to-one name="memberShipLevel" class="com.ystech.mem.model.MemberShipLevel" column="memberShipLevelId" not-found="ignore"></many-to-one>
+        <many-to-one name="weixinGzuserinfo" class="com.ystech.weixin.model.WeixinGzuserinfo" column="weixinGzuserinfoId" not-found="ignore"></many-to-one>
+        <many-to-one name="parent" class="com.ystech.mem.model.Member" column="parentId" not-found="ignore"></many-to-one>
+        <many-to-one name="spread" class="com.ystech.pllm.model.Spread" column="spreadId" not-found="ignore"></many-to-one>
+        <many-to-one name="user" class="com.ystech.xwqr.model.sys.User" column="userId" not-found="ignore"></many-to-one>
+        <property name="carNo" type="string">
+            <column name="carNo" length="50" />
+        </property>
+        <property name="vinNo" type="string">
+            <column name="vinNo" length="50" />
+        </property>
+         <property name="car" type="string">
+            <column name="car" length="200" />
+        </property>
+        <property name="note" type="string">
+            <column name="note" length="2000" />
+        </property>
+        <property name="totalPoint" type="java.lang.Integer">
+            <column name="totalPoint" />
+        </property>
+        <property name="enterpriseId" type="java.lang.Integer">
+            <column name="enterpriseId" />
+        </property>
+        <property name="consumpiontPoint" type="java.lang.Integer">
+            <column name="ConsumpiontPoint" />
+        </property>
+        <property name="overagePiont" type="java.lang.Integer">
+            <column name="overagePiont" />
+        </property>
+       
+        <property name="createTime" type="timestamp">
+            <column name="createTime" length="19" />
+        </property>
+        <property name="modifyTime" type="timestamp">
+            <column name="modifyTime" length="19" />
+        </property>
+        <property name="sex" type="string">
+            <column name="sex" />
+        </property>
+        <property name="birthdayType" type="java.lang.Integer">
+            <column name="birthdayType"  />
+        </property>
+        <property name="birthday" type="timestamp">
+            <column name="birthday" length="19" />
+        </property>
+        <property name="balance" type="string">
+            <column name="balance" length="200" />
+        </property>
+          <property name="onlineBookingNum" type="java.lang.Integer">
+            <column name="onlineBookingNum" />
+        </property>
+          <property name="microId" type="string">
+            <column name="microId" length="200"/>
+        </property>
+          <property name="nickName" type="string">
+            <column name="nickName" length="200"/>
+        </property>
+        <property name="memTagIds" type="string">
+            <column name="memTagIds" length="200" />
+        </property>
+        <property name="memTagNames" type="string">
+            <column name="memTagNames" length="200" />
+        </property>
+         <property name="lastBuyDate" type="timestamp">
+            <column name="lastBuyDate" length="19" />
+        </property>
+        <property name="lastContactDate" type="timestamp">
+            <column name="lastContactDate" length="19" />
+        </property>
+        <property name="lastOnlineBookingDate" type="timestamp">
+            <column name="lastOnlineBookingDate" length="19" />
+        </property>
+         <property name="hasCar" type="java.lang.Integer">
+            <column name="hasCar" />
+        </property>
+          <property name="totalMoney" type="java.lang.Double">
+            <column name="totalMoney" />
+        </property>
+        
+        
+          <property name="carMasterStatus" type="java.lang.Integer">
+            <column name="carMasterStatus" />
+        </property>
+            <property name="carMasterDate" type="timestamp">
+            <column name="carMasterDate" />
+        </property>
+        
+          <property name="memAuthStatus" type="java.lang.Integer">
+            <column name="memAuthStatus" />
+        </property>
+            <property name="memAuthDate" type="timestamp">
+            <column name="memAuthDate" />
+        </property>
+            <property name="memLastAuthDate" type="timestamp">
+            <column name="memLastAuthDate" />
+        </property>
+          <property name="agentStatus" type="java.lang.Integer">
+            <column name="agentStatus" />
+        </property>
+          <property name="icard" type="string">
+            <column name="icard" />
+        </property>
+          <property name="agentDate" type="timestamp">
+            <column name="agentDate" />
+        </property>
+         <property name="agentNum" type="java.lang.Integer">
+            <column name="agentNum" />
+        </property>
+         <property name="agentSuccessNum" type="java.lang.Integer">
+            <column name="agentSuccessNum" />
+        </property>
+         <property name="payType" type="string">
+            <column name="payType" />
+        </property>
+         <property name="accountNo" type="string">
+            <column name="accountNo" />
+        </property>
+         <property name="agentMoney" type="java.lang.Float">
+            <column name="agentMoney" />
+        </property>
+         <property name="agentPointNum" type="java.lang.Integer">
+            <column name="agentPointNum" />
+        </property>
+         <property name="memType" type="java.lang.Integer">
+            <column name="memType" />
+        </property>
+         <property name="level" type="java.lang.Integer">
+            <column name="level" />
+        </property>
+         <property name="totalNum" type="java.lang.Integer">
+            <column name="totalNum" />
+        </property>
+        
+         <one-to-one  name="memberInfo" property-ref="member"  ></one-to-one>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-6-7 9:29:46 by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.ystech.weixin.model.WeixinAccount" table="weixin_account" >
+       <id name="dbid" type="java.lang.Integer">
+            <column name="dbid" />
+            <generator class="identity" />
+        </id>
+        <property name="accountname" type="string">
+            <column name="accountname" length="200">
+                <comment>&#185;&#171;&#214;&#218;&#213;&#202;&#186;&#197;&#195;&#251;&#179;&#198;</comment>
+            </column>
+        </property>
+        <property name="accounttoken" type="string">
+            <column name="accounttoken" length="200">
+                <comment>&#185;&#171;&#214;&#218;&#213;&#202;&#186;&#197;TOKEN</comment>
+            </column>
+        </property>
+        <property name="accountnumber" type="string">
+            <column name="accountnumber" length="200">
+                <comment>&#185;&#171;&#214;&#218;&#206;&#162;&#208;&#197;&#186;&#197;</comment>
+            </column>
+        </property>
+        <property name="accounttype" type="string">
+            <column name="accounttype" length="50">
+                <comment>&#185;&#171;&#214;&#218;&#186;&#197;&#192;&#224;&#208;&#205;</comment>
+            </column>
+        </property>
+        <property name="accountemail" type="string">
+            <column name="accountemail" length="200">
+                <comment>&#181;&#231;&#215;&#211;&#211;&#202;&#207;&#228;</comment>
+            </column>
+        </property>
+        <property name="accountdesc" type="string">
+            <column name="accountdesc" length="500">
+                <comment>&#185;&#171;&#214;&#218;&#213;&#202;&#186;&#197;&#195;&#232;&#202;&#246;</comment>
+            </column>
+        </property>
+        <property name="accountaccesstoken" type="string">
+            <column name="accountaccesstoken" length="1000">
+                <comment>ACCESS_TOKEN</comment>
+            </column>
+        </property>
+        <property name="accountappid" type="string">
+            <column name="accountappid" length="200">
+                <comment>&#185;&#171;&#214;&#218;&#213;&#202;&#186;&#197;APPID</comment>
+            </column>
+        </property>
+        <property name="accountappsecret" type="string">
+            <column name="accountappsecret" length="500">
+                <comment>&#185;&#171;&#214;&#218;&#213;&#202;&#186;&#197;APPSECRET</comment>
+            </column>
+        </property>
+        <property name="addtoekntime" type="timestamp">
+            <column name="ADDTOEKNTIME" length="19" />
+        </property>
+        <property name="userDbid" type="java.lang.Integer">
+            <column name="userDbid" />
+        </property>
+        <property name="weixinAccountid" type="string">
+            <column name="WEIXIN_ACCOUNTID" length="100" />
+        </property>
+        <property name="enterpriseId" type="java.lang.Integer">
+            <column name="enterpriseId"  />
+        </property>
+        <property name="code" type="string">
+            <column name="code" length="100" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2014-2-17 20:12:44 by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.ystech.mem.model.MemCarSeriy" table="mem_carseriy">
+        <id name="dbid" type="java.lang.Integer">
+            <column name="dbid" />
+            <generator class="identity" />
+        </id>
+        <property name="name" type="string">
+            <column name="name" length="50" />
+        </property>
+        <property name="navPrice" type="java.lang.Long">
+            <column name="navPrice" precision="10" scale="0" />
+        </property>
+        <property name="salePrice" type="java.lang.Long">
+            <column name="salePrice" precision="10" scale="0" />
+        </property>
+        <property name="saleCSPrice" type="java.lang.Long">
+            <column name="saleCSPrice" precision="10" scale="0" />
+        </property>
+        <property name="introduction" type="string">
+            <column name="introduction" length="500" />
+        </property>
+        <property name="picture" type="string">
+            <column name="picture" length="2000" />
+        </property>
+        <property name="discInfor" type="string">
+            <column name="discInfor" length="2000" />
+        </property>
+        <property name="discDetail" type="string">
+            <column name="discDetail" length="2000" />
+        </property>
+        <property name="orderNum" type="java.lang.Integer">
+            <column name="orderNum" />
+        </property>
+        <property name="itemType" type="java.lang.Integer">
+            <column name="itemType" />
+        </property>
+        <property name="tryCarStatus" type="java.lang.Integer">
+            <column name="tryCarStatus" />
+        </property>
+        <property name="status" type="java.lang.Integer">
+            <column name="status" />
+        </property>
+        <property name="description" type="string">
+            <column name="description" length="65535" />
+        </property>
+          <property name="carColors" type="string">
+            <column name="carColors" length="500" />
+        </property>
+         <property name="carLevel" type="string">
+            <column name="carLevel" length="500" />
+        </property>
+         <property name="priceFrom" type="string">
+            <column name="priceFrom" length="500" />
+        </property>
+         <property name="handCarTime" type="string">
+            <column name="handCarTime" length="500" />
+        </property>
+         <property name="bianxueType" type="string">
+            <column name="bianxueType" length="500" />
+        </property>
+         <property name="carDriverType" type="string">
+            <column name="carDriverType" length="500" />
+        </property>
+         <property name="hasJk" type="string">
+            <column name="hasJk" length="500" />
+        </property>
+         <property name="zbType" type="string">
+            <column name="zbType" length="500" />
+        </property>
+         <property name="pailiang" type="string">
+            <column name="pailiang" length="500" />
+        </property>
+    </class>
+</hibernate-mapping>

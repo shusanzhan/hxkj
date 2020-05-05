@@ -1,0 +1,117 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2014-2-25 14:48:58 by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.ystech.mem.model.OnlineBooking" table="mem_onlinebooking">
+        <id name="dbid" type="java.lang.Integer">
+            <column name="dbid" />
+            <generator class="identity" />
+        </id>
+        <property name="microId" type="string">
+            <column name="microId" length="200" />
+        </property>
+        <property name="name" type="string">
+            <column name="name" length="200" />
+        </property>
+        <property name="mobilePhone" type="string">
+            <column name="mobilePhone" length="50" />
+        </property>
+        <property name="phone" type="string">
+            <column name="phone" length="50" />
+        </property>
+        <property name="note" type="string">
+            <column name="note" length="2000" />
+        </property>
+        <property name="carModel" type="string">
+            <column name="carModel" length="200" />
+        </property>
+        <property name="status" type="java.lang.Integer">
+            <column name="status" />
+        </property>
+        <property name="bookingDate" type="timestamp">
+            <column name="bookingDate" length="19" />
+        </property>
+        <property name="createTime" type="timestamp">
+            <column name="createTime" length="19" />
+        </property>
+        <property name="modifyTime" type="timestamp">
+            <column name="modifyTime" length="19" />
+        </property>
+        <property name="operator" type="string">
+            <column name="operator" length="50" />
+        </property>
+        <property name="carSeriy" type="string">
+            <column name="carSeriy" length="50" />
+        </property>
+        <property name="dealRecord" type="string">
+            <column name="dealRecord" length="2000" />
+        </property>
+        <property name="bookingType" type="string">
+            <column name="bookingType" length="50" />
+        </property>
+        <property name="area" type="string">
+            <column name="area" length="50" />
+        </property>
+         <property name="isMember" type="java.lang.Boolean">
+            <column name="isMember"/>
+        </property>
+         <property name="isCustomer" type="java.lang.Boolean">
+            <column name="isCustomer"/>
+        </property>
+        <property name="carPlate" type="string">
+	            <column name="carPlate" length="20" />
+	        </property>
+         <property name="isMessage" type="java.lang.Boolean">
+            <column name="isMessage"/>
+        </property>
+         <property name="enterpriseId" type="java.lang.Integer">
+            <column name="enterpriseId"/>
+        </property>
+        <many-to-one name="member" class="com.ystech.mem.model.Member" column="memberId" not-found="ignore" fetch="join"></many-to-one>
+        <!-- 旧车置换子表 在线预约 -->
+        <joined-subclass name="com.ystech.mem.model.OnlineBookingOldCarChanage" table="mem_onlinebookingoldcarchanage" >
+        	<key column="dbid"></key>
+        	<property name="unit" type="string">
+            	<column name="unit" length="2000" />
+	        </property>
+	        <property name="carPlateDate" type="date">
+	            <column name="carPlateDate" length="10" />
+	        </property>
+	        <property name="safetyContent" type="string">
+	            <column name="safetyContent" length="2000" />
+	        </property>
+	        <property name="safetyDueDate" type="date">
+	            <column name="safetyDueDate" length="10" />
+	        </property>
+	        <property name="isExamed" type="java.lang.Boolean">
+	            <column name="isExamed" />
+	        </property>
+	        <property name="isMajorAccident" type="java.lang.Boolean">
+	            <column name="isMajorAccident" />
+	        </property>
+	        <property name="driveringNum" type="string">
+	            <column name="driveringNum" />
+	        </property>
+        </joined-subclass>
+          <!-- 预约保养 在线预约 -->
+        <joined-subclass name="com.ystech.mem.model.OnlineBookingExamined" table="mem_onlineBookingExamined" >
+        	<key column="dbid"></key>
+	        <property name="plateDate" type="date">
+	            <column name="plateDate" length="10" />
+	        </property>
+	        <property name="factoryModel" type="string">
+	            <column name="factoryModel" length="200" />
+	        </property>
+        </joined-subclass>
+        <joined-subclass name="com.ystech.mem.model.OnlineBookingSafetyMaintenance" table="mem_onlineBookingSafetyMaintenance" >
+        	<key column="dbid"></key>
+        	<property name="driveringNum" type="string">
+	            <column name="driveringNum" />
+	        </property>
+	        <property name="buyCarDate" type="date">
+	            <column name="buyCarDate" length="10" />
+	        </property>
+        </joined-subclass>
+        </class>
+</hibernate-mapping>

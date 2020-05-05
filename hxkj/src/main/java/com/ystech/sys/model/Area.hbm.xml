@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2014-1-17 10:12:36 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.ystech.xwqr.model.sys.Area" table="sys_area">
+        <id name="dbid" type="java.lang.Integer">
+            <column name="dbid" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="area" class="com.ystech.xwqr.model.sys.Area" fetch="select">
+            <column name="parent" />
+        </many-to-one>
+        <property name="createDate" type="timestamp">
+            <column name="create_date" length="19" not-null="true" />
+        </property>
+        <property name="modifyDate" type="timestamp">
+            <column name="modify_date" length="19" not-null="true" />
+        </property>
+        <property name="orders" type="java.lang.Integer">
+            <column name="orders" />
+        </property>
+        <property name="fullName" type="string">
+            <column name="full_name" not-null="true" />
+        </property>
+        <property name="name" type="string">
+            <column name="name" length="100" not-null="true" />
+        </property>
+        <property name="treePath" type="string">
+            <column name="tree_path" not-null="true" />
+        </property>
+        <set name="areas" table="area" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="parent" />
+            </key>
+            <one-to-many class="com.ystech.xwqr.model.sys.Area" />
+        </set>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-6-7 9:29:46 by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.ystech.weixin.model.WeixinAccesstoken" table="weixin_accesstoken">
+       <id name="dbid" type="java.lang.Integer">
+            <column name="dbid" />
+            <generator class="identity" />
+        </id>
+        <property name="accessToken" type="string">
+            <column name="access_token" />
+        </property>
+        <property name="jsapiTicket" type="string">
+            <column name="jsapiTicket" />
+        </property>
+        <property name="addtime" type="timestamp">
+            <column name="addtime" length="19" />
+        </property>
+        <property name="expiresIb" type="java.lang.Integer">
+            <column name="expires_ib" />
+        </property>
+        <property name="accountId" type="java.lang.Integer">
+            <column name="accountId" />
+        </property>
+        <property name="appId" type="java.lang.Integer">
+            <column name="appId" />
+        </property>
+    </class>
+</hibernate-mapping>

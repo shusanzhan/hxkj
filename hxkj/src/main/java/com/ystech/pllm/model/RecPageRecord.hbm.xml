@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-8-19 22:40:49 by Hibernate Tools 4.0.0.Final -->
+<hibernate-mapping>
+    <class name="com.ystech.pllm.model.RecPageRecord" table="pllm_rec_pagerecord" >
+       <id name="dbid" type="java.lang.Integer">
+            <column name="dbid" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="recPageUrl" class="com.ystech.pllm.model.RecPageUrl" fetch="select" not-found="ignore">
+            <column name="urlId" />
+        </many-to-one>
+        <property name="gzUserId" type="java.lang.Integer">
+            <column name="gzUserId" />
+        </property>
+        <property name="startTime" type="timestamp">
+            <column name="startTime" length="19" />
+        </property>
+        <property name="liveTime" type="timestamp">
+            <column name="liveTime" length="19" />
+        </property>
+        <property name="staLone" type="java.lang.Integer">
+            <column name="staLone" />
+        </property>
+        <property name="ip" type="string">
+            <column name="ip" />
+        </property>
+        <property name="areaStr" type="string">
+            <column name="areaStr" length="500" />
+        </property>
+        <property name="city" type="string">
+            <column name="city" length="500" />
+        </property>
+        <property name="provice" type="string">
+            <column name="provice" length="500" />
+        </property>
+        <property name="sessionId" type="string">
+            <column name="sessionId" length="500" />
+        </property>
+        <property name="type" type="java.lang.Integer">
+            <column name="type" />
+        </property>
+        <property name="productId" type="java.lang.Integer">
+            <column name="productId" />
+        </property>
+    </class>
+</hibernate-mapping>

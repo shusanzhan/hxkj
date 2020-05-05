@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-6-7 21:40:43 by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.ystech.weixin.model.WeixinSubscribe" table="weixin_subscribe">
+        <id name="dbid" type="java.lang.Integer">
+            <column name="dbid" />
+            <generator class="identity" />
+        </id>
+        <property name="accountid" type="string">
+            <column name="accountid" />
+        </property>
+        <property name="addTime" type="string">
+            <column name="addTime" />
+        </property>
+        <property name="msgType" type="string">
+            <column name="msgType" />
+        </property>
+        <property name="templateId" type="java.lang.Integer">
+            <column name="templateId" />
+        </property>
+        <property name="templateName" type="string">
+            <column name="templateName" />
+        </property>
+         <property name="status" type="java.lang.Integer">
+            <column name="status" />
+        </property>
+    </class>
+</hibernate-mapping>

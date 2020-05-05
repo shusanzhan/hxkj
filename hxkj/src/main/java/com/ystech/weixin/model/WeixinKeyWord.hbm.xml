@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-6-7 21:36:04 by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.ystech.weixin.model.WeixinKeyWord" table="weixin_keyword" >
+       <id name="dbid" type="java.lang.Integer">
+            <column name="dbid" />
+            <generator class="identity" />
+        </id>
+        <property name="keyword" type="string">
+            <column name="keyword" />
+        </property>
+        <property name="matchingType" type="java.lang.Integer">
+            <column name="matchingType" />
+        </property>
+         <property name="createDate" type="timestamp">
+            <column name="createDate" length="19" />
+        </property>
+        <property name="modifyDate" type="date">
+            <column name="modifyDate" length="10" />
+        </property>
+         <many-to-one name="weixinKeyWordRole" class="com.ystech.weixin.model.WeixinKeyWordRole" column="keywordroleId"></many-to-one>
+    </class>
+</hibernate-mapping>

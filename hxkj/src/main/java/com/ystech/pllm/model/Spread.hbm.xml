@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-12-20 12:48:43 by Hibernate Tools 4.0.0.Final -->
+<hibernate-mapping>
+    <class name="com.ystech.pllm.model.Spread" table="pllm_s_spread" >
+        <id name="dbid" type="java.lang.Integer">
+            <column name="dbid" />
+            <generator class="identity" />
+        </id>
+        <property name="name" type="string">
+            <column name="name" length="500" />
+        </property>
+        <property name="policyStateMentUrl" type="string">
+            <column name="policyStateMentUrl" length="500" />
+        </property>
+        <property name="note" type="string">
+            <column name="note" length="2000" />
+        </property>
+        <property name="spreadNum" type="java.lang.Integer">
+            <column name="spreadNum" />
+        </property>
+        <property name="scanCodeNum" type="java.lang.Integer">
+            <column name="scanCodeNum" />
+        </property>
+        <property name="weixinAccountId" type="java.lang.Integer">
+            <column name="weixinAccountId" />
+        </property>
+        <property name="enterpriseId" type="java.lang.Integer">
+            <column name="enterpriseId" />
+        </property>
+        <property name="status" type="java.lang.Integer">
+            <column name="status" />
+        </property>
+        <property name="createDate" type="date">
+            <column name="createDate" length="10" />
+        </property>
+        <property name="modifyDate" type="date">
+            <column name="modifyDate" length="10" />
+        </property>
+        <set name= "spreadGroups" order-by="dbid"> 
+			<key column="spreadId "/> 
+			<one-to-many class="com.ystech.pllm.model.SpreadGroup"/> 
+		</set> 
+    </class>
+</hibernate-mapping>
